@@ -3,7 +3,7 @@ import pickle
 import numpy as np 
 
 
-model = pickle.load(open("../knn_model.pkl", "rb"))
+model = pickle.load(open("./knn_model.pkl", "rb"))
 app = Flask(__name__)
 
 @app.route('/')
@@ -21,4 +21,4 @@ def predict():
 
     output = prediction[0]# get the prediction as a string
 
-    return output# displays the prediction inside the '<b>{{ prediction_text }}</b>' that we've seen in 'index.html'
+    return str(output)# displays the prediction inside the '<b>{{ prediction_text }}</b>' that we've seen in 'index.html'
